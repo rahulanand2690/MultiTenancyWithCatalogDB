@@ -1,0 +1,48 @@
+create table Account(
+	AccountNo int4 Primary Key,
+	AccountType varchar (50),
+	Balance int4
+);
+	
+ALTER TABLE Account ADD COLUMN BankName varchar(50);
+drop table Account;
+select * from Account;
+delete from Account where  accountno=101;
+insert into Account Values(201,'Current',200,'HDFC');
+
+
+-------------
+create table Account(
+	AccountNo int4 Primary Key,
+	AccountType varchar (50),
+	Balance int4
+);
+	
+ALTER TABLE Account ADD COLUMN BankName varchar(50);
+drop table Account;
+select * from Account;
+delete from Account where  accountno=101;
+insert into Account Values(101,'Savings',100,'ICICI');
+--------------
+
+select * from tenantdbdetails;
+
+-- Table: public.tenantdbdetails
+
+-- DROP TABLE public.tenantdbdetails;
+
+CREATE TABLE public.tenantdbdetails
+(
+    tenantid integer NOT NULL,
+    driverclassname character varying(50) COLLATE pg_catalog."default",
+    url character varying(50) COLLATE pg_catalog."default",
+    name character varying(50) COLLATE pg_catalog."default",
+    username character varying(50) COLLATE pg_catalog."default",
+    password character varying(50) COLLATE pg_catalog."default",
+    CONSTRAINT tenantdbdetails_pkey PRIMARY KEY (tenantid)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.tenantdbdetails
+    OWNER to postgres;
